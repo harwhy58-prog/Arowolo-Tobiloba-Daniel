@@ -98,7 +98,7 @@ export default function About() {
             >
               <div className="absolute -bottom-10 -right-10 w-full h-full border border-secondary/20 -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
+                src="https://images.unsplash.com/photo-1614644147724-2d4785d69962?auto=format&fit=crop&q=80&w=800" 
                 alt="Arowolo Tobiloba Daniel" 
                 className="w-full h-auto object-cover grayscale brightness-110 shadow-2xl transition-all duration-700 hover:grayscale-0 rounded-none"
                 referrerPolicy="no-referrer"
