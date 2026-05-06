@@ -33,10 +33,10 @@ export default function Home() {
               Growth Architect & Conversion Expert
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] tracking-tight mb-10">
-              I Turn <span className="luxury-text-gradient italic">Invisible</span> Brands Into Market Leaders.
+              I Build <span className="luxury-text-gradient italic">High-Performance</span> Revenue Engines.
             </h1>
             <p className="text-xl text-white/60 max-w-xl mb-12 leading-relaxed font-medium">
-              Most businesses have a "portfolio website." I build <strong>Revenue Engines</strong>. Precision-engineered funnels designed to capture, qualify, and convert your ideal clients 24/7.
+              Stop collecting visits. Start collecting clients. I specialize in <strong>Conversion-Engineered Ecosystems</strong> that transform cold traffic into high-ticket partners consistently.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link to="/booking" className="bg-secondary text-primary px-10 py-5 text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all text-center">
@@ -65,11 +65,11 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -inset-4 border border-secondary/20 -z-10 translate-x-4 translate-y-4"></div>
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
                <img 
-                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
-                 alt="High Performance Architecture" 
-                 className="w-full h-full object-cover grayscale brightness-50 sepia-[0.3] hover:grayscale-0 transition-all duration-1000"
+                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400" 
+                 alt="Luxury Growth Architecture" 
+                 className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
                  referrerPolicy="no-referrer"
                />
                <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
@@ -149,10 +149,9 @@ export default function Home() {
           </div>
           
           <div className="mt-20 text-center">
-             <Link to="/booking" className="inline-flex items-center gap-4 group">
-                <span className="text-xs font-black uppercase tracking-[0.3em]">I'm facing these problems</span>
-                <span className="w-20 h-[1px] bg-secondary group-hover:w-32 transition-all"></span>
-                <ArrowRight size={18} className="text-secondary" />
+             <Link to="/booking" className="btn-secondary !px-12 !py-6 text-sm flex items-center justify-center gap-4 mx-auto w-fit">
+                <span className="font-black uppercase tracking-[0.3em]">Fix My Funnel Now</span>
+                <ArrowRight size={18} />
              </Link>
           </div>
         </div>
@@ -261,7 +260,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. FAQ SECTION: TRANSPARENT INTEL */}
+      {/* 5. TESTIMONIALS: REVENUE IMPACT REPORTS */}
+      <section className="py-32 bg-white text-primary">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
+            <div className="max-w-2xl">
+              <h2 className="text-xs font-black tracking-[0.3em] uppercase text-secondary mb-6">Partner Success</h2>
+              <h3 className="text-4xl md:text-6xl font-serif leading-tight">
+                Active Client Relationships & <span className="text-primary/40 italic">Proven Revenue Lift.</span>
+              </h3>
+            </div>
+            <Link to="/testimonials" className="bg-primary text-white px-10 py-5 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-secondary hover:text-primary transition-all">
+              View All Reports
+            </Link>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-10">
+            {[
+              {
+                client: "Luxe Dynamics",
+                service: "Omnichannel Growth Strategy",
+                content: "AROWOLO TOBILOBA DANIEL is currently managing our full-stack digital growth. Since onboarding, our lead quality has seen a 3x improvement across all channels.",
+                results: "+312% Lead Quality"
+              },
+              {
+                client: "Zenith Agencies",
+                service: "SEO & Content Authority",
+                content: "The level of strategic depth AROWOLO TOBILOBA DANIEL brings to our SEO is unmatched. He doesn't just rank keywords; he builds topical authority that converts.",
+                results: "12 Top-3 Rankings"
+              },
+              {
+                client: "Bloom E-commerce",
+                service: "Paid Media Optimization",
+                content: "Currently overseeing our Google Ads budget. We've seen our CPA drop by 40% while maintaining the same scale. A true growth architect.",
+                results: "-40% Acquisition Cost"
+              }
+            ].map((t, i) => (
+              <div key={i} className="bg-accent/30 p-12 border border-primary/5 flex flex-col justify-between h-full group hover:bg-accent/50 transition-all">
+                <div>
+                  <div className="flex items-center gap-2 mb-8">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <div key={star} className="w-3 h-3 bg-secondary rounded-full" />
+                    ))}
+                  </div>
+                  <p className="text-lg font-serif mb-10 leading-relaxed italic text-primary/80">"{t.content}"</p>
+                </div>
+                <div className="pt-10 border-t border-primary/10">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-secondary mb-2">{t.service}</p>
+                  <p className="text-xl font-serif mb-4">{t.client}</p>
+                  <div className="bg-primary text-white text-[9px] font-black uppercase tracking-[0.2em] px-4 py-2 inline-block">
+                    {t.results}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FAQ SECTION: TRANSPARENT INTEL */}
       <section className="py-32 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-10">
           <div className="text-center mb-20">

@@ -31,16 +31,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16 px-4">
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-3 mb-6">
-               <img 
-                src="/logo.png" 
-                alt="Logo" 
-                className="h-8 w-auto invert" 
-                onError={(e) => (e.currentTarget.style.display = 'none')} 
-              />
+            <Link to="/" className="inline-flex items-center gap-3 mb-6 group">
+              <div className="relative h-10 w-10 flex items-center justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  className="h-full w-auto relative z-10 invert" 
+                  onError={(e) => (e.currentTarget.style.display = 'none')} 
+                />
+                <div className="absolute inset-0 bg-primary flex items-center justify-center font-serif text-secondary font-black text-xl rounded-none group-hover:scale-105 transition-transform">A</div>
+              </div>
               <div className="text-xl font-black tracking-[0.2em] uppercase leading-none">
                 <span className="font-serif">AROWOLO</span>
-                <span className="font-serif opacity-70">TOBILOBA DANIEL</span>
+                <span className="font-serif opacity-70 group-hover:opacity-100 transition-opacity">TOBILOBA DANIEL</span>
               </div>
             </Link>
             <p className="opacity-70 max-w-sm mb-8 leading-relaxed text-sm font-medium">
