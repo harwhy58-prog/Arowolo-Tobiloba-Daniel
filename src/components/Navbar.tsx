@@ -35,16 +35,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-10 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="relative h-10 w-10 flex items-center justify-center">
-            <img 
-              src="/logo.png" 
-              alt="Logo" 
-              className="h-full w-auto relative z-10" 
-              onError={(e) => (e.currentTarget.style.display = 'none')} 
-            />
-            <div className="absolute inset-0 bg-secondary flex items-center justify-center font-serif text-primary font-black text-xl rounded-none group-hover:scale-105 transition-transform">A</div>
+            <div className="absolute inset-0 bg-secondary flex items-center justify-center font-serif text-primary font-black text-xl rounded-none group-hover:scale-105 transition-transform shadow-lg">A</div>
           </div>
           <div className="text-lg md:text-xl font-black tracking-[0.2em] flex flex-col md:flex-row md:gap-2 leading-none">
-            <span className="font-serif">AROWOLO</span>
+            <span className="font-serif text-primary">AROWOLO</span>
             <span className="font-serif opacity-70 group-hover:opacity-100 transition-opacity">TOBILOBA DANIEL</span>
           </div>
         </Link>

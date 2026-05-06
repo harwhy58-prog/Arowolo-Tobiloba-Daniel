@@ -134,7 +134,7 @@ export const PROJECTS = [
     id: 1,
     title: 'High-Ticket Coaching Ecosystem',
     category: 'Funnel Design',
-    before: 'https://images.unsplash.com/photo-1510511459019-5dee9954ff92?auto=format&fit=crop&q=80&w=800',
+    before: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
     after: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     description: "Transformed a cluttered, non-converting site into a clinical high-ticket funnel that pre-qualifies every lead.",
     results: "280% ROI Increase"
@@ -143,7 +143,7 @@ export const PROJECTS = [
     id: 2,
     title: 'Luxe Aesthetics E-commerce',
     category: 'Store Optimization',
-    before: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800',
+    before: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800',
     after: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e12?auto=format&fit=crop&q=80&w=800',
     description: "Full architectural overhaul of a premium skincare brand. Aligning visual authority with conversion triggers.",
     results: "45% Bounce Rate Drop"
@@ -152,8 +152,8 @@ export const PROJECTS = [
     id: 3,
     title: 'Precision Trading SaaS',
     category: 'Landing Page Redesign',
-    before: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800',
-    after: 'https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=800',
+    before: 'https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=800',
+    after: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     description: "Streamlining a complex data-heavy platform into a high-converting landing page for institutional investors.",
     results: "18% Signup Lift"
   }

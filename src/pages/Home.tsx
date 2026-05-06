@@ -67,8 +67,8 @@ export default function Home() {
             <div className="absolute -inset-4 border border-secondary/20 -z-10 translate-x-4 translate-y-4"></div>
             <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
                <img 
-                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400" 
-                 alt="Luxury Growth Architecture" 
+                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1400" 
+                 alt="Business Growth Dashboard" 
                  className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
                  referrerPolicy="no-referrer"
                />
@@ -215,17 +215,17 @@ export default function Home() {
               <div key={project.id} className={`grid lg:grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                  <div className="relative group">
                     <div className="absolute -inset-4 border border-secondary/10 -z-10"></div>
-                    <div className="grid grid-cols-2 gap-1 bg-white/5 ring-1 ring-white/10 overflow-hidden">
-                       <div className="relative aspect-video">
+                    <div className="grid grid-cols-2 gap-1 bg-white/5 ring-1 ring-white/10 overflow-hidden aspect-video">
+                       <div className="relative h-full">
                           <img 
                             src={project.before} 
                             alt="Before" 
-                            className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" 
                             referrerPolicy="no-referrer"
                           />
-                          <div className="absolute top-4 left-4 bg-red-900/80 text-white text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1">Before</div>
+                          <div className="absolute top-4 left-4 bg-red-900/90 text-white text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1">Before</div>
                        </div>
-                       <div className="relative aspect-video">
+                       <div className="relative h-full border-l border-white/10">
                           <img 
                             src={project.after} 
                             alt="After" 

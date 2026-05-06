@@ -33,13 +33,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3 mb-6 group">
               <div className="relative h-10 w-10 flex items-center justify-center">
-                <img 
-                  src="/logo.png" 
-                  alt="Logo" 
-                  className="h-full w-auto relative z-10 invert" 
-                  onError={(e) => (e.currentTarget.style.display = 'none')} 
-                />
-                <div className="absolute inset-0 bg-primary flex items-center justify-center font-serif text-secondary font-black text-xl rounded-none group-hover:scale-105 transition-transform">A</div>
+                <div className="absolute inset-0 bg-secondary flex items-center justify-center font-serif text-primary font-black text-xl rounded-none group-hover:scale-105 transition-transform shadow-lg">A</div>
               </div>
               <div className="text-xl font-black tracking-[0.2em] uppercase leading-none">
                 <span className="font-serif">AROWOLO</span>

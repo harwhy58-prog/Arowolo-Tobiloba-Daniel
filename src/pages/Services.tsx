@@ -56,8 +56,8 @@ export default function Services() {
                    <img 
                     src={`https://images.unsplash.com/photo-${[
                       '1460925895917-afdab827c52f', // Web Design
-                      '1551288049-bebda4e38f71', // SEO (New stable ID)
-                      '1504868584819-f8eecf928540', // Landing Pages
+                      '1551288049-bbbda4e38f71', // SEO
+                      '1551288049-bbbda546697a', // Landing Pages (Stable ID)
                       '1551434678-e076c223a692', // Funnels
                       '1516321318423-f06f85e504b3', // Marketing
                       '1522202176988-66273c2fd55f'  // Ads

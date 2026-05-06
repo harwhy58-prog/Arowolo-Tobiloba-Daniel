@@ -33,9 +33,9 @@ export default function Projects() {
               transition={{ delay: idx % 2 * 0.1 }}
               className="group"
             >
-              <div className="relative border border-white/5 bg-dark-surface p-1 mb-10 overflow-hidden">
-                <div className="grid grid-cols-2 gap-1 bg-white/5">
-                  <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative border border-white/5 bg-dark-surface p-1 mb-10 overflow-hidden aspect-video">
+                <div className="grid grid-cols-2 gap-1 bg-white/5 h-full">
+                  <div className="relative h-full overflow-hidden">
                     <img 
                       src={project.before} 
                       alt="Before" 
@@ -46,7 +46,7 @@ export default function Projects() {
                        Inefficient Core
                     </div>
                   </div>
-                  <div className="relative aspect-[4/5] overflow-hidden">
+                  <div className="relative h-full overflow-hidden border-l border-white/10">
                     <img 
                       src={project.after} 
                       alt="After" 
