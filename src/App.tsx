@@ -9,7 +9,6 @@ import About from './pages/About';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import Booking from './pages/Booking';
-import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import ThankYou from './pages/ThankYou';
@@ -40,7 +39,6 @@ export default function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/booking" element={<Booking />} />
-            <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/thank-you" element={<ThankYou />} />

@@ -1,97 +1,338 @@
-import { motion } from 'motion/react';
-import { ArrowRight, Star, TrendingUp, Users, ShieldCheck, PlayCircle } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { 
+  ArrowRight, 
+  TrendingUp, 
+  ShieldCheck, 
+  ChevronDown, 
+  AlertCircle, 
+  MousePointerClick,
+  BarChart3,
+  Globe,
+  Zap,
+  CheckCircle2
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SERVICES, TESTIMONIALS, PROJECTS } from '../constants';
+import { SERVICES, PROJECTS, FAQS } from '../constants';
 
 export default function Home() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
   return (
-    <div className="pt-20 min-h-screen flex flex-col">
-      {/* Main Editorial Container */}
-      <div className="flex-grow grid lg:grid-cols-[1.4fr_1fr] bg-primary">
-        
-        {/* Content Pane */}
-        <section className="section-padding flex flex-col justify-center pane-border">
+    <div className="bg-primary text-white overflow-x-hidden">
+      {/* 1. HERO SECTION: PREMIUM ARCHITECTURE */}
+      <section className="min-h-screen pt-28 pb-20 relative flex items-center">
+        <div className="max-w-7xl mx-auto px-10 grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] mb-10 tracking-tight">
-              I help stores & businesses get more <span className="luxury-text-gradient">qualified clients</span> consistently.
+            <div className="flex items-center gap-3 text-secondary font-black tracking-[0.3em] uppercase text-[10px] mb-8">
+              <span className="w-12 h-[1px] bg-secondary"></span>
+              Growth Architect & Conversion Expert
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05] tracking-tight mb-10">
+              I Turn <span className="luxury-text-gradient italic">Invisible</span> Brands Into Market Leaders.
             </h1>
-            <p className="text-lg text-white/70 max-w-xl mb-12 leading-relaxed font-medium">
-              Transforming your digital presence from a standard portfolio into a high-conversion sales machine using 2026-standard UX logic.
+            <p className="text-xl text-white/60 max-w-xl mb-12 leading-relaxed font-medium">
+              Most businesses have a "portfolio website." I build <strong>Revenue Engines</strong>. Precision-engineered funnels designed to capture, qualify, and convert your ideal clients 24/7.
             </p>
-            <div className="flex flex-wrap gap-6 mb-16">
-              <Link to="/booking" className="btn-primary">
-                Secure Your Growth Strategy
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link to="/booking" className="bg-secondary text-primary px-10 py-5 text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all text-center">
+                Get a Strategy Audit
+              </Link>
+              <Link to="/projects" className="border border-white/20 px-10 py-5 text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all text-center flex items-center justify-center gap-2">
+                Proven Results <ArrowRight size={14} />
               </Link>
             </div>
             
-            {/* Service Grid with editorial borders */}
-            <div className="grid md:grid-cols-2 gap-10 mt-12">
-              {SERVICES.slice(0, 4).map((service, i) => (
-                <div key={i} className="service-item-border">
-                  <h3 className="text-xs font-black uppercase tracking-widest text-secondary mb-2">{service.title}</h3>
-                  <p className="text-[11px] opacity-60 leading-relaxed font-bold uppercase tracking-wider">{service.description}</p>
-                </div>
-              ))}
+            <div className="mt-16 flex items-center gap-6 opacity-40 grayscale">
+               <p className="text-[10px] font-black uppercase tracking-widest">Industry Expertise</p>
+               <div className="h-[1px] w-20 bg-white/20"></div>
+               <div className="flex gap-4">
+                  <Globe size={18} />
+                  <Zap size={18} />
+                  <TrendingUp size={18} />
+               </div>
             </div>
           </motion.div>
-        </section>
 
-        {/* Funnel Pane */}
-        <section className="bg-dark-surface section-padding flex flex-col gap-12 overflow-hidden relative">
-          {/* Booking Card */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="bg-white/5 border border-white/10 p-10 relative"
+            transition={{ duration: 1.2, delay: 0.2 }}
+            className="relative"
           >
-            <div className="absolute -top-3 right-6 bg-secondary text-primary px-3 py-1 font-black text-[9px] uppercase tracking-widest">
-              Confirmed Results
-            </div>
-            
-            <div className="flex gap-10 mb-10 pb-8 border-b border-white/10">
-              <div>
-                <p className="text-3xl font-serif text-secondary">$2.4M+</p>
-                <p className="text-[9px] font-black uppercase tracking-widest opacity-40">Revenue Generated</p>
-              </div>
-              <div>
-                <p className="text-3xl font-serif text-secondary">184%</p>
-                <p className="text-[9px] font-black uppercase tracking-widest opacity-40">Avg Conversion Lift</p>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-               <input type="text" placeholder="FULL NAME" className="w-full bg-transparent border-b border-white/20 py-3 text-xs font-bold uppercase tracking-widest focus:border-secondary outline-none transition-colors" />
-               <input type="email" placeholder="WORK EMAIL" className="w-full bg-transparent border-b border-white/20 py-3 text-xs font-bold uppercase tracking-widest focus:border-secondary outline-none transition-colors" />
-               <input type="text" placeholder="MONTHLY REVENUE?" className="w-full bg-transparent border-b border-white/20 py-3 text-xs font-bold uppercase tracking-widest focus:border-secondary outline-none transition-colors" />
-               <Link to="/booking" className="btn-primary w-full mt-4">Book Discovery Call</Link>
+            <div className="absolute -inset-4 border border-secondary/20 -z-10 translate-x-4 translate-y-4"></div>
+            <div className="relative aspect-[4/5] overflow-hidden">
+               <img 
+                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
+                 alt="High Performance Architecture" 
+                 className="w-full h-full object-cover grayscale brightness-50 sepia-[0.3] hover:grayscale-0 transition-all duration-1000"
+                 referrerPolicy="no-referrer"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+               
+               {/* Achievement Overlay */}
+               <div className="absolute bottom-10 left-10 right-10 bg-white/5 backdrop-blur-xl border border-white/10 p-8">
+                  <div className="flex justify-between items-end">
+                     <div>
+                        <p className="text-secondary font-serif text-4xl mb-1">$2.4M+</p>
+                        <p className="text-[9px] font-black tracking-widest uppercase opacity-60">Revenue Lift Generated</p>
+                     </div>
+                     <div className="text-right">
+                        <BarChart3 className="text-secondary ml-auto mb-2" size={32} />
+                        <p className="text-[9px] font-black tracking-widest uppercase opacity-60 text-secondary">Verified Strategy</p>
+                     </div>
+                  </div>
+               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Testimonial Snippet */}
-          <div className="mt-8">
-             <p className="text-lg font-serif italic text-white/80 leading-relaxed max-w-md">
-                "AROWOLO TOBILOBA didn't just build a site; they built a revenue engine. Our leads increased by 300% in the first quarter post-launch."
-             </p>
-             <div className="mt-6 text-[10px] font-black tracking-[0.2em] uppercase text-secondary">
-                — Marcus Thorne, CEO at Nexus Retail
-             </div>
+      {/* 2. PROBLEM IDENTIFICATION: THE LEAKY BUCKET */}
+      <section className="py-32 bg-dark-surface border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="max-w-3xl mb-20">
+            <h2 className="text-xs font-black tracking-[0.3em] uppercase text-secondary mb-6 italic">The Reality Check</h2>
+            <h3 className="text-4xl md:text-6xl font-serif leading-tight mb-8">
+              Is Your Website a Tool or a <span className="text-white/40">Liability?</span>
+            </h3>
+            <p className="text-lg text-white/50 leading-relaxed font-medium">
+              95% of businesses are losing money every single day because their digital presence isn't optimized for the human brain. If you're facing these challenges, you're leaving revenue on the table.
+            </p>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="flex gap-6 opacity-20 filter grayscale mt-auto">
-             {[1, 2, 3].map(i => (
-               <img key={i} src={`https://via.placeholder.com/100x40?text=BRAND+${i}`} alt="Brand" className="h-6" />
-             ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 ring-1 ring-white/5">
+            {[
+              { 
+                title: "Ghost Traffic", 
+                desc: "Thousands of visitors, but zero qualified leads. You have eyes on you, but no one is taking action.",
+                icon: MousePointerClick
+              },
+              { 
+                title: "Low Trust Authority", 
+                desc: "Your design looks 'dated' or unprofessional, causing potential high-ticket clients to bounce in seconds.",
+                icon: ShieldCheck
+              },
+              { 
+                title: "Leaky Funnels", 
+                desc: "You're spending on ads, but your conversion path is broken. You're effectively burning your marketing budget.",
+                icon: AlertCircle
+              },
+              { 
+                title: "Weak Online Presence", 
+                desc: "When clients search for your solution, they find your competitors because your SEO is non-existent.",
+                icon: Globe
+              },
+              { 
+                title: "Poor ROI on Ads", 
+                desc: "Ineffective ad creatives and landing pages mean every lead costs 3x more than it should.",
+                icon: BarChart3
+              },
+              { 
+                title: "Scalability Ceiling", 
+                desc: "You can't handle more clients because your onboarding and capture process is manual and slow.",
+                icon: Zap
+              }
+            ].map((problem, i) => (
+              <div key={i} className="bg-primary p-12 hover:bg-white/5 transition-colors group">
+                <div className="text-secondary mb-8 group-hover:scale-110 transition-transform inline-block">
+                  <problem.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h4 className="text-xl font-serif mb-4">{problem.title}</h4>
+                <p className="text-sm text-white/40 leading-relaxed font-medium">{problem.desc}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      </div>
+          
+          <div className="mt-20 text-center">
+             <Link to="/booking" className="inline-flex items-center gap-4 group">
+                <span className="text-xs font-black uppercase tracking-[0.3em]">I'm facing these problems</span>
+                <span className="w-20 h-[1px] bg-secondary group-hover:w-32 transition-all"></span>
+                <ArrowRight size={18} className="text-secondary" />
+             </Link>
+          </div>
+        </div>
+      </section>
 
-      {/* Decorative divider footer */}
+      {/* 3. SOLUTION / SERVICES: THE GROWTH ENGINE */}
+      <section className="py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="flex flex-col lg:flex-row gap-20 items-end mb-24">
+            <div className="lg:w-2/3">
+              <h2 className="text-xs font-black tracking-[0.3em] uppercase text-secondary mb-6">The Solution</h2>
+              <h3 className="text-4xl md:text-6xl font-serif leading-tight">
+                Conversion-First <br /> Digital Ecosystems
+              </h3>
+            </div>
+            <div className="lg:w-1/3">
+               <p className="text-white/50 text-sm leading-relaxed mb-8">
+                 I don't just "design pages." I engineer systems that capture, qualify, and convert visitors into high-paying advocates, systematically.
+               </p>
+               <Link to="/services" className="text-[10px] font-black uppercase tracking-[0.2em] border-b border-secondary pb-2">Explore Methodology</Link>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {SERVICES.slice(0, 4).map((service, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -5 }}
+                className="group border border-white/10 p-12 hover:border-secondary/40 transition-all flex flex-col md:flex-row gap-10 items-start"
+              >
+                <div className="text-secondary opacity-30 group-hover:opacity-100 transition-opacity">
+                  <span className="text-4xl font-serif tracking-tighter">0{i+1}</span>
+                </div>
+                <div>
+                  <h4 className="text-2xl font-serif mb-6 group-hover:text-secondary transition-colors underline decoration-transparent group-hover:decoration-secondary underline-offset-8">{service.title}</h4>
+                  <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-md">{service.description}</p>
+                  <ul className="space-y-3">
+                    {["ROI Focused", "Custom UX", "Performance Tuned"].map(item => (
+                      <li key={item} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest opacity-40">
+                         <CheckCircle2 size={12} className="text-secondary" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. PROJECTS: BEFORE & AFTER TRANSFORMATIONS */}
+      <section className="py-32 bg-accent/5">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="text-center mb-24">
+             <h2 className="text-xs font-black tracking-[0.3em] uppercase text-secondary mb-6">Proven Authority</h2>
+             <h3 className="text-4xl md:text-6xl font-serif">Visual Transformations</h3>
+          </div>
+
+          <div className="space-y-32">
+            {PROJECTS.slice(0, 3).map((project, i) => (
+              <div key={project.id} className={`grid lg:grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                 <div className="relative group">
+                    <div className="absolute -inset-4 border border-secondary/10 -z-10"></div>
+                    <div className="grid grid-cols-2 gap-1 bg-white/5 ring-1 ring-white/10 overflow-hidden">
+                       <div className="relative aspect-video">
+                          <img 
+                            src={project.before} 
+                            alt="Before" 
+                            className="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute top-4 left-4 bg-red-900/80 text-white text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1">Before</div>
+                       </div>
+                       <div className="relative aspect-video">
+                          <img 
+                            src={project.after} 
+                            alt="After" 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+                            referrerPolicy="no-referrer"
+                          />
+                          <div className="absolute top-4 left-4 bg-secondary text-primary text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1">After (Redesign)</div>
+                       </div>
+                    </div>
+                 </div>
+                 <div className={i % 2 !== 0 ? 'lg:order-first' : ''}>
+                    <p className="text-secondary text-[10px] font-black uppercase tracking-[0.3em] mb-6">{project.category}</p>
+                    <h4 className="text-4xl font-serif mb-8">{project.title}</h4>
+                    <p className="text-white/50 mb-10 leading-relaxed">{project.description}</p>
+                    <div className="flex gap-10 mb-12 border-y border-white/5 py-8">
+                       <div>
+                          <p className="text-2xl font-serif text-secondary">{project.results.split(' ')[0]}</p>
+                          <p className="text-[9px] font-black uppercase tracking-widest opacity-40">Impact Measure</p>
+                       </div>
+                       <div>
+                          <p className="text-2xl font-serif text-secondary">Verified</p>
+                          <p className="text-[9px] font-black uppercase tracking-widest opacity-40">Result Status</p>
+                       </div>
+                    </div>
+                    <Link to="/projects" className="bg-white text-primary px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-secondary transition-all">
+                       View Case Study
+                    </Link>
+                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FAQ SECTION: TRANSPARENT INTEL */}
+      <section className="py-32 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-10">
+          <div className="text-center mb-20">
+             <h2 className="text-xs font-black tracking-[0.3em] uppercase text-secondary mb-6">Common Inquiries</h2>
+             <h3 className="text-4xl md:text-5xl font-serif">Frequently Asked Questions</h3>
+          </div>
+
+          <div className="space-y-4">
+            {FAQS.map((faq, index) => (
+              <div 
+                key={index} 
+                className="border border-white/5 bg-dark-surface overflow-hidden group"
+              >
+                <button 
+                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                  className="w-full px-8 py-8 flex justify-between items-center text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="font-serif text-lg md:text-xl">{faq.question}</span>
+                  <ChevronDown 
+                    size={20} 
+                    className={`text-secondary transition-transform duration-300 ${activeFaq === index ? 'rotate-180' : ''}`} 
+                  />
+                </button>
+                <AnimatePresence>
+                  {activeFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="px-8 pb-8 text-white/50 text-sm leading-relaxed max-w-2xl font-medium">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FINAL CTA: THE ARCHITECTURE FOR REVENUE */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-secondary/5 -z-10"></div>
+        <div className="max-w-5xl mx-auto px-10 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+           >
+              <h2 className="text-5xl md:text-7xl font-serif mb-12 leading-[1.1]">
+                Ready to Turn <span className="italic luxury-text-gradient">Potential</span> into Profit?
+              </h2>
+              <p className="text-xl text-white/60 mb-16 max-w-2xl mx-auto leading-relaxed">
+                Stop guessing. Start growing. Schedule your $0 strategy audit today and let's map out your complete conversion ecosystem.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                 <Link to="/booking" className="bg-secondary text-primary px-12 py-6 text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl shadow-secondary/20">
+                    Secure My Strategy Call
+                 </Link>
+                 <Link to="/contact" className="border border-white/20 text-white px-12 py-6 text-[11px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all">
+                    Inquire Personally
+                 </Link>
+              </div>
+           </motion.div>
+        </div>
+      </section>
+
+      {/* Decorative footer bar */}
       <div className="h-[10px] bg-secondary w-full" />
     </div>
   );

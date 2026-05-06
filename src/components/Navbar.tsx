@@ -33,9 +33,17 @@ export default function Navbar() {
       } border-b border-primary/5 text-primary`}
     >
       <div className="max-w-7xl mx-auto px-10 flex justify-between items-center">
-        <Link to="/" className="text-lg md:text-xl font-black tracking-[0.2em] flex items-center gap-2">
-          <span className="font-serif">AROWOLO</span>
-          <span className="font-serif opacity-70">TOBILOBA</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img 
+            src="/logo.png" 
+            alt="Logo" 
+            className="h-8 md:h-10 w-auto" 
+            onError={(e) => (e.currentTarget.style.display = 'none')} 
+          />
+          <div className="text-lg md:text-xl font-black tracking-[0.2em] flex flex-col md:flex-row md:gap-2 leading-none">
+            <span className="font-serif">AROWOLO</span>
+            <span className="font-serif opacity-70">TOBILOBA DANIEL</span>
+          </div>
         </Link>
 
         {/* Desktop Links */}

@@ -12,7 +12,6 @@ const footerLinks = {
   legal: [
     { name: 'Privacy Policy', path: '/privacy' },
     { name: 'Terms of Service', path: '/terms' },
-    { name: 'FAQ', path: '/faq' },
   ],
   social: [
     { name: 'Instagram', icon: Instagram, href: '#' },
@@ -32,9 +31,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16 px-4">
           <div className="lg:col-span-2">
-            <Link to="/" className="text-xl font-black tracking-[0.2em] inline-block mb-6 uppercase">
-              <span className="font-serif">AROWOLO</span>
-              <span className="font-serif opacity-70">TOBILOBA</span>
+            <Link to="/" className="inline-flex items-center gap-3 mb-6">
+               <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="h-8 w-auto invert" 
+                onError={(e) => (e.currentTarget.style.display = 'none')} 
+              />
+              <div className="text-xl font-black tracking-[0.2em] uppercase leading-none">
+                <span className="font-serif">AROWOLO</span>
+                <span className="font-serif opacity-70">TOBILOBA DANIEL</span>
+              </div>
             </Link>
             <p className="opacity-70 max-w-sm mb-8 leading-relaxed text-sm font-medium">
               Transforming digital presences from portfolios into revenue engines using precision-engineered conversion architectures.
@@ -81,7 +88,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] opacity-50">
-          <p>© {new Date().getFullYear()} AROWOLO TOBILOBA. ALL RIGHTS RESERVED.</p>
+          <p>© {new Date().getFullYear()} AROWOLO TOBILOBA DANIEL. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
              <Link to="/privacy">Privacy</Link>
              <Link to="/terms">Terms</Link>
