@@ -64,14 +64,14 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute -inset-4 border border-secondary/20 -z-10 translate-x-4 translate-y-4"></div>
-            <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
-               <img 
-                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1400" 
-                 alt="Business Growth Dashboard" 
-                 className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
-                 referrerPolicy="no-referrer"
-               />
+              <div className="absolute -inset-4 border border-secondary/20 -z-10 translate-x-4 translate-y-4"></div>
+              <div className="relative aspect-[4/5] overflow-hidden shadow-2xl">
+                 <img 
+                   src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=1400" 
+                   alt="Business Growth Performance" 
+                   className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
+                   referrerPolicy="no-referrer"
+                 />
                <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
                
                {/* Achievement Overlay */}

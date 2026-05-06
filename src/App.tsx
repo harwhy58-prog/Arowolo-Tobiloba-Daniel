@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BrandMarquee from './components/BrandMarquee';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="/cta" element={<CTAAction />} />
           </Routes>
         </main>
+        <BrandMarquee />
         <Footer />
       </div>
     </BrowserRouter>

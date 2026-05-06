@@ -52,21 +52,21 @@ export default function Services() {
                       Inquire Directly
                    </Link>
                 </div>
-                <div className="lg:col-span-6 relative aspect-video overflow-hidden border border-white/10">
-                   <img 
-                    src={`https://images.unsplash.com/photo-${[
-                      '1460925895917-afdab827c52f', // Web Design
-                      '1551288049-bbbda4e38f71', // SEO
-                      '1551288049-bbbda546697a', // Landing Pages (Stable ID)
-                      '1551434678-e076c223a692', // Funnels
-                      '1516321318423-f06f85e504b3', // Marketing
-                      '1522202176988-66273c2fd55f'  // Ads
-                    ][idx % 6]}?auto=format&fit=crop&q=80&w=1000`}
-                    alt={service.title}
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                   />
-                   <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors"></div>
+                  <div className="lg:col-span-6 relative aspect-video overflow-hidden border border-white/10">
+                    <img 
+                      src={`https://images.unsplash.com/photo-${[
+                        '1460925895917-afdab827c52f',
+                        '1551288049-bbbda4e38f71',
+                        '1460925895917-afdab827c52f',
+                        '1551434678-e076c223a692',
+                        '1516321318423-f06f85e504b3',
+                        '1522202176988-66273c2fd55f'
+                      ][idx % 6]}?auto=format&fit=crop&q=80&w=1000`}
+                      alt={service.title}
+                      className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors"></div>
                    
                    <div className="absolute bottom-6 right-6">
                       <Zap className="text-secondary opacity-20 group-hover:opacity-100 transition-opacity" size={40} strokeWidth={1} />
