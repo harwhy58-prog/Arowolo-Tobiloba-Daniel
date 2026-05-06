@@ -3,7 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>AROWOLO TOBILOBA DANIEL | Premium Growth Architect</title>
+    <script>
+      // Global fix for "Cannot set property fetch of #<Window> which has only a getter"
+      (function() {
+        try {
+          const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch');
+          if (descriptor && !descriptor.writable && descriptor.configurable) {
+            Object.defineProperty(window, 'fetch', {
+              value: window.fetch,
+              writable: true,
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {
+          console.warn('Polyfill protection failed:', e);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

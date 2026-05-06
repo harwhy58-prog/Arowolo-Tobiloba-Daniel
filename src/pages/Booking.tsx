@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, CheckCircle, Calendar, Shield, Zap, Globe, Mail } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 
